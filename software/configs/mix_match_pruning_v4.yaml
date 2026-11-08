@@ -1,0 +1,39 @@
+# V4 pre-compression pruning experiment
+
+model: ${HEART_BASELINE_MODEL}
+
+data_file: ${HEART_WORK_DIR}/data/final_health_coaching_v4/processed/health_coaching_train.jsonl
+
+output_dir: ${HEART_WORK_DIR}/pruning_v4
+
+text_field: text
+
+calibration:
+  loss_scope: assistant_only
+  assistant_marker: "<|assistant|>"
+  num_batches: 16
+  batch_size: 1
+  max_length: 512
+  dtype: float16
+
+strategies:
+  - min_conservative
+  - balanced
+
+sensitivity_method: average_abs_gradient_per_matrix
+within_layer_pruning: magnitude_threshold
+
+protected:
+  - token_embeddings
+  - lm_head
+  - normalization_layers
+  - rotary_embeddings
+
+pruned_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj

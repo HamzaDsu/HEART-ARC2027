@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "purpose": "Provenance and byte-for-byte verification of the PubMed adaptation corpus used by HEART HealthSLM",
+  "source": {
+    "huggingface_dataset": "casinca/PUBMED_title_abstracts_2019_baseline",
+    "split": "train",
+    "streaming": true,
+    "revision": null,
+    "revision_note": "Original Hugging Face dataset commit/revision not recorded. Fresh download is not verified to be byte-identical.",
+    "download_script": "software/scripts/download_pubmed_sample.py",
+    "observed_scanned_rows": 10005,
+    "observed_written_rows": 10000,
+    "default_sample_size": 10000,
+    "default_min_chars": 200,
+    "raw_path_relative_to_workspace": "data/raw/pubmed_sample_10k.jsonl",
+    "raw_sha256": "b28714eb7d5b854dafc192de7a01392976fd12bc8432939fb58f433c8b881e94"
+  },
+  "processing": {
+    "script": "software/scripts/build_pubmed_corpus.py",
+    "eval_fraction": 0.02,
+    "min_chars": 200,
+    "max_records": 10000,
+    "random_seed": 42,
+    "total_rows": 10000,
+    "train_rows": 9800,
+    "eval_rows": 200,
+    "verified": "2026-11-08: regenerated locally from preserved raw sample and matched original train/eval SHA-256 hashes"
+  },
+  "artifacts": {
+    "train": {
+      "relative_path": "data/processed/pubmed_domain_train.jsonl",
+      "sha256": "052b428468c95d23143653cdfe99c38b4be1ce11736fa13a3d11fdc6098bb3c9"
+    },
+    "eval": {
+      "relative_path": "data/processed/pubmed_domain_eval.jsonl",
+      "sha256": "1f834eec156ae235b5b2cd25980a37b720b60211e8b2cea2819695a28fec4a0f"
+    }
+  },
+  "publication_note": "Raw text is not redistributed in this code repository; check upstream dataset license/redistribution conditions before making source data public."
+}

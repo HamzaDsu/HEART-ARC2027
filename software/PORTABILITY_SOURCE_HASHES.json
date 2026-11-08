@@ -1,0 +1,21 @@
+{
+  "scripts/train_lora.py": "a07db639d51bddd00cc319ca57a23982198c1033dfa8f90ea165e6bc692c34d1",
+  "scripts/merge_lora.py": "d9e90962fd0692a717cd35d0d74925c72798ac65e042cc40ffe38a51dcb743d5",
+  "scripts/mix_match_prune_llm_assistant_only.py": "c685c15309734bed22657a451a3eaca86c89241a8a31c022f27c0627ff497b82",
+  "scripts/train_lora_assistant_only.py": "86632455989b7f2d75f81ea4726da750f7355909ec5e38fb48a1fa85e24c626f",
+  "configs/tinyllama_pubmed_lora_scratch.yaml": "d768dcbd2b206d268c7c86f148faeaa79e07f0665a669b72fab2a0e37c7c213a",
+  "configs/health_coaching_lora_v4_3ep.yaml": "10f3a5b35d2439bb9b6a1e9cd11aa681c505d6a6ebb43952b9a524cb9ea7a7dc",
+  "configs/mix_match_pruning_v4.yaml": "fdaa5d8c96387ffa46331ce24ef0f8b6a76208c2bb67f3602a0dba9d999dda1d",
+  "slurm/evaluate_lower30_v4.slurm": "5c702ecb5ace5b476f2abe41e5504aa85e0ac3de1607edc9b6fc197bc76e801e",
+  "slurm/prune_health_v4_lower30.slurm": "7c0711dd4706dbfc3a131065f8c34ff3fd622acbabed3f50c50804ea4646e3c4",
+  "slurm/train_health_coaching_v4_3ep.slurm": "27ccdb83a9083ef5dc3c3dbfff3a7208b8902066e35d2760d381e512e60b3bb7",
+  "slurm/build_safety_imatrix_v4.slurm": "67d7d1bc0c9decb8f6cdeb27472836cc8753b13be6f3a703a4d1ba1d605a8e8b",
+  "slurm/prune_health_v4.slurm": "8cd3bbde0c284aa8911a7a699f2d669dc1ceb86d576820d1c322eb6785272f97",
+  "slurm/evaluate_precompression_v4.slurm": "00d1d6036be8db2ef800f90e9967472ba0bd8d1e85fd410caca478d7c507c33c",
+  "slurm/evaluate_gguf_e3.slurm": "cf014686d0bf61ccd373ee9e25168d8ba59a74430a1450cf4f48913598487321",
+  "slurm/merge_health_coaching_v4_3ep.slurm": "5a34c9599cf37a6069ac9e1836c5cbc0c97d7e798addb970c9cf8ff1253f2410",
+  "slurm/train_pubmed_lora_10k.slurm": "4718c542130e589b38253ad177fc6bfcd6d291e0b6961c6fb94bebe3db255305",
+  "slurm/evaluate_pruned_v4.slurm": "85b9edfda1a2eb9436851cce7d722c17ee58e81a69e60ffca8a658eceaabf864",
+  "slurm/merge_pubmed_lora.slurm": "15fbd9654b97dfd39e25e0b3d9d9c2d77b3dc6a269104834587c479e51660c93",
+  "slurm/evaluate_gguf_v4.slurm": "c8262f8395e97fb76b87b447137bf53df370aa34376b8c8d681b60b727044968"
+}

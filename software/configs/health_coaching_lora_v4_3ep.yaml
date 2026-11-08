@@ -1,0 +1,39 @@
+run_name: health_coaching_lora_v4_3ep
+model_name: ${HEART_WORK_DIR}/runs/tinyllama_pubmed_lora/merged_model
+train_file: ${HEART_WORK_DIR}/data/final_health_coaching_v4/processed/health_coaching_train.jsonl
+eval_file: ${HEART_WORK_DIR}/data/final_health_coaching_v4/processed/health_coaching_eval.jsonl
+output_dir: ${HEART_WORK_DIR}/runs/health_coaching_lora_v4_3ep/checkpoints
+dataset_text_field: text
+model_dtype: float16
+training:
+  max_seq_length: 512
+  num_train_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  warmup_ratio: 0.03
+  logging_steps: 5
+  eval_steps: 100
+  save_steps: 100
+  save_total_limit: 1
+  fp16: true
+  bf16: false
+  gradient_checkpointing: true
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_compute_dtype: float16
+  bnb_4bit_use_double_quant: true
