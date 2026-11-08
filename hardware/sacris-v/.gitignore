@@ -1,0 +1,43 @@
+# sbt / Scala
+target/
+project/target/
+project/project/
+.bsp/
+.bloop/
+.metals/
+.idea/
+*.class
+*.log
+
+# elaboration output (the ready-made netlists live under prebuilt/)
+/generated/
+/TopLevel.sv
+/test_run_dir/
+
+# Verilator
+/obj_dir/
+*.vcd
+
+# software builds
+*.o
+*.elf
+*.bin
+!prebuilt/software/**/*.bin
+*.map
+software/*/*.hex
+software/*/build/
+
+# Vivado
+*.jou
+*.str
+*.xpr
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.srcs/
+.Xil/
+*.bit
+/vivado_proj/

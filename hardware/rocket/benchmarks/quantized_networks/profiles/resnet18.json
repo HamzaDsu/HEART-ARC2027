@@ -1,0 +1,248 @@
+{
+  "model_name": "resnet18",
+  "architecture": "cnn",
+  "format": "pytorch",
+  "total_weight_parameters": 11193728,
+  "matched_weight_parameters": 11188928,
+  "weight_coverage_pct": 99.96,
+  "average_bits_matched": 6.733,
+  "packed_weights_matched_mib": 8.981,
+  "unmatched_config_layers": [],
+  "layers": [
+    {
+      "name": "conv1",
+      "shape": [
+        64,
+        3,
+        7,
+        7
+      ],
+      "parameters": 9408,
+      "average_bits": 5.812
+    },
+    {
+      "name": "layer1.0.conv1",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameters": 36864,
+      "average_bits": 6.625
+    },
+    {
+      "name": "layer1.0.conv2",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameters": 36864,
+      "average_bits": 7.188
+    },
+    {
+      "name": "layer1.1.conv1",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameters": 36864,
+      "average_bits": 6.312
+    },
+    {
+      "name": "layer1.1.conv2",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameters": 36864,
+      "average_bits": 7.688
+    },
+    {
+      "name": "layer2.0.conv1",
+      "shape": [
+        128,
+        64,
+        3,
+        3
+      ],
+      "parameters": 73728,
+      "average_bits": 6.625
+    },
+    {
+      "name": "layer2.0.conv2",
+      "shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "parameters": 147456,
+      "average_bits": 5.188
+    },
+    {
+      "name": "layer2.0.downsample.0",
+      "shape": [
+        128,
+        64,
+        1,
+        1
+      ],
+      "parameters": 8192,
+      "average_bits": 5.281
+    },
+    {
+      "name": "layer2.1.conv1",
+      "shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "parameters": 147456,
+      "average_bits": 6.719
+    },
+    {
+      "name": "layer2.1.conv2",
+      "shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "parameters": 147456,
+      "average_bits": 7.531
+    },
+    {
+      "name": "layer3.0.conv1",
+      "shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "parameters": 294912,
+      "average_bits": 6.578
+    },
+    {
+      "name": "layer3.0.conv2",
+      "shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "parameters": 589824,
+      "average_bits": 5.641
+    },
+    {
+      "name": "layer3.0.downsample.0",
+      "shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "parameters": 32768,
+      "average_bits": 6.375
+    },
+    {
+      "name": "layer3.1.conv1",
+      "shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "parameters": 589824,
+      "average_bits": 6.516
+    },
+    {
+      "name": "layer3.1.conv2",
+      "shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "parameters": 589824,
+      "average_bits": 6.703
+    },
+    {
+      "name": "layer4.0.conv1",
+      "shape": [
+        512,
+        256,
+        3,
+        3
+      ],
+      "parameters": 1179648,
+      "average_bits": 6.516
+    },
+    {
+      "name": "layer4.0.conv2",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "parameters": 2359296,
+      "average_bits": 7.0
+    },
+    {
+      "name": "layer4.0.downsample.0",
+      "shape": [
+        512,
+        256,
+        1,
+        1
+      ],
+      "parameters": 131072,
+      "average_bits": 6.797
+    },
+    {
+      "name": "layer4.1.conv1",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "parameters": 2359296,
+      "average_bits": 6.547
+    },
+    {
+      "name": "layer4.1.conv2",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "parameters": 2359296,
+      "average_bits": 7.188
+    },
+    {
+      "name": "fc",
+      "shape": [
+        43,
+        512
+      ],
+      "parameters": 22016,
+      "average_bits": 4.279
+    }
+  ],
+  "analysis_status": "checkpoint_metadata_estimate",
+  "limitations": [
+    "Packed storage covers matched weight tensors only.",
+    "Activation memory and runtime buffers excluded.",
+    "Inference operations and performance not measured."
+  ]
+}

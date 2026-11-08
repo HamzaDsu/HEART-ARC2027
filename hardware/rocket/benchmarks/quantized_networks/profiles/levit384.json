@@ -1,0 +1,588 @@
+{
+  "model_name": "levit384",
+  "architecture": "hybrid_vision_transformer",
+  "format": "pytorch",
+  "total_weight_parameters": 37533408,
+  "matched_weight_parameters": 37474064,
+  "weight_coverage_pct": 99.84,
+  "average_bits_matched": 8.0,
+  "packed_weights_matched_mib": 35.738,
+  "unmatched_config_layers": [
+    "head.linear",
+    "head_dist.linear"
+  ],
+  "layers": [
+    {
+      "name": "stem.conv1.linear",
+      "shape": [
+        48,
+        3,
+        3,
+        3
+      ],
+      "parameters": 1296,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stem.conv2.linear",
+      "shape": [
+        96,
+        48,
+        3,
+        3
+      ],
+      "parameters": 41472,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stem.conv3.linear",
+      "shape": [
+        192,
+        96,
+        3,
+        3
+      ],
+      "parameters": 165888,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stem.conv4.linear",
+      "shape": [
+        384,
+        192,
+        3,
+        3
+      ],
+      "parameters": 663552,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.0.attn.qkv.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.0.attn.proj.ln.linear",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.0.mlp.ln1.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.0.mlp.ln2.linear",
+      "shape": [
+        384,
+        768
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.1.attn.qkv.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.1.attn.proj.ln.linear",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.1.mlp.ln1.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.1.mlp.ln2.linear",
+      "shape": [
+        384,
+        768
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.2.attn.qkv.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.2.attn.proj.ln.linear",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.2.mlp.ln1.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.2.mlp.ln2.linear",
+      "shape": [
+        384,
+        768
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.3.attn.qkv.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.3.attn.proj.ln.linear",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.3.mlp.ln1.linear",
+      "shape": [
+        768,
+        384
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.0.blocks.3.mlp.ln2.linear",
+      "shape": [
+        384,
+        768
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.downsample.attn_downsample.kv.linear",
+      "shape": [
+        1920,
+        384
+      ],
+      "parameters": 737280,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.downsample.attn_downsample.q.ln.linear",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.downsample.attn_downsample.proj.ln.linear",
+      "shape": [
+        512,
+        1536
+      ],
+      "parameters": 786432,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.downsample.mlp.ln1.linear",
+      "shape": [
+        1024,
+        512
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.downsample.mlp.ln2.linear",
+      "shape": [
+        512,
+        1024
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.0.attn.qkv.linear",
+      "shape": [
+        1152,
+        512
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.0.attn.proj.ln.linear",
+      "shape": [
+        512,
+        576
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.0.mlp.ln1.linear",
+      "shape": [
+        1024,
+        512
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.0.mlp.ln2.linear",
+      "shape": [
+        512,
+        1024
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.1.attn.qkv.linear",
+      "shape": [
+        1152,
+        512
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.1.attn.proj.ln.linear",
+      "shape": [
+        512,
+        576
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.1.mlp.ln1.linear",
+      "shape": [
+        1024,
+        512
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.1.mlp.ln2.linear",
+      "shape": [
+        512,
+        1024
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.2.attn.qkv.linear",
+      "shape": [
+        1152,
+        512
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.2.attn.proj.ln.linear",
+      "shape": [
+        512,
+        576
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.2.mlp.ln1.linear",
+      "shape": [
+        1024,
+        512
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.2.mlp.ln2.linear",
+      "shape": [
+        512,
+        1024
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.3.attn.qkv.linear",
+      "shape": [
+        1152,
+        512
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.3.attn.proj.ln.linear",
+      "shape": [
+        512,
+        576
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.3.mlp.ln1.linear",
+      "shape": [
+        1024,
+        512
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.1.blocks.3.mlp.ln2.linear",
+      "shape": [
+        512,
+        1024
+      ],
+      "parameters": 524288,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.downsample.attn_downsample.kv.linear",
+      "shape": [
+        2560,
+        512
+      ],
+      "parameters": 1310720,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.downsample.attn_downsample.q.ln.linear",
+      "shape": [
+        512,
+        512
+      ],
+      "parameters": 262144,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.downsample.attn_downsample.proj.ln.linear",
+      "shape": [
+        768,
+        2048
+      ],
+      "parameters": 1572864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.downsample.mlp.ln1.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.downsample.mlp.ln2.linear",
+      "shape": [
+        768,
+        1536
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.0.attn.qkv.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.0.attn.proj.ln.linear",
+      "shape": [
+        768,
+        768
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.0.mlp.ln1.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.0.mlp.ln2.linear",
+      "shape": [
+        768,
+        1536
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.1.attn.qkv.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.1.attn.proj.ln.linear",
+      "shape": [
+        768,
+        768
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.1.mlp.ln1.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.1.mlp.ln2.linear",
+      "shape": [
+        768,
+        1536
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.2.attn.qkv.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.2.attn.proj.ln.linear",
+      "shape": [
+        768,
+        768
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.2.mlp.ln1.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.2.mlp.ln2.linear",
+      "shape": [
+        768,
+        1536
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.3.attn.qkv.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.3.attn.proj.ln.linear",
+      "shape": [
+        768,
+        768
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.3.mlp.ln1.linear",
+      "shape": [
+        1536,
+        768
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "stages.2.blocks.3.mlp.ln2.linear",
+      "shape": [
+        768,
+        1536
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    }
+  ],
+  "analysis_status": "checkpoint_metadata_estimate",
+  "limitations": [
+    "Packed storage covers matched weight tensors only.",
+    "Activation memory and runtime buffers excluded.",
+    "Inference operations and performance not measured."
+  ]
+}

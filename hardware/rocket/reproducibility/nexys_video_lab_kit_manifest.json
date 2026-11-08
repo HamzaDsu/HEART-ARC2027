@@ -1,0 +1,51 @@
+{
+  "kit": "Nexys Video FPGA lab kit",
+  "physical_fpga_tested": false,
+  "files": [
+    {
+      "path": "HealthSLMBalancedNexysVideo.bit",
+      "sha256": "881d04295963f070cfa3c0cb2ee4c9caf1c2ec3169009ee989476aa27fa01ac3",
+      "bytes": 9730766
+    },
+    {
+      "path": "NexysVideoHarness.bit",
+      "sha256": "27cac3e41f89729e5c33c8f7ff542d1a56b2da3ef3b090efc15e2b045c8c8575",
+      "bytes": 9730766
+    },
+    {
+      "path": "SHA256SUMS",
+      "sha256": "a16004a7766a8079535fd03c6dd666209d95d68c4e8489f2da77179e1ae3b5ef",
+      "bytes": 421
+    },
+    {
+      "path": "baseline_timing.txt",
+      "sha256": "f59d2e3f417d51470f927f7dc9bf387113afc35cd1b4473698a734f8f4ad657f",
+      "bytes": 3356021
+    },
+    {
+      "path": "baseline_utilization.txt",
+      "sha256": "62f09c79fba5f712897ad62950a4da2c9d524580af15035562946374fe0041b3",
+      "bytes": 556489
+    },
+    {
+      "path": "dhrystone.riscv",
+      "sha256": "73edfc56b179489a3c2ffc2484b5ec40044de96ad7b73938a9586069934f3c09",
+      "bytes": 22360
+    },
+    {
+      "path": "hello.riscv",
+      "sha256": "81f87f92f64804cc471389242e9fb73a0f027be4202487ad7ccc321abc5a5ac4",
+      "bytes": 35816
+    },
+    {
+      "path": "optimized_timing.txt",
+      "sha256": "2717b5ffcb5824e168270d9faeb552b620270992662d3e83487dcf9bc97e6605",
+      "bytes": 3370359
+    },
+    {
+      "path": "optimized_utilization.txt",
+      "sha256": "b07ae5dd6b41dc6c92b251a7ba8cd16b0aba6cbcd793a021f19d7d8fb1f1157d",
+      "bytes": 468810
+    }
+  ]
+}

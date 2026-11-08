@@ -1,0 +1,46 @@
+SaCriS-V: third-party components
+================================
+
+The SaCriS-V generator is licensed under the BSD 3-Clause License; see LICENSE.
+
+This repository additionally redistributes the third-party components listed
+below. They are NOT covered by the SaCriS-V license: each remains under its own
+license and copyright, and those notices must be retained in any redistribution,
+in source or binary form.
+
+
+1. Berkeley HardFloat
+---------------------
+Path:      dependencies/hardfloat/
+Copyright: Copyright (c) 2010-2015, The Regents of the University of California
+           (Regents). All Rights Reserved.
+License:   BSD 3-Clause License
+Full text: dependencies/hardfloat/LICENSE
+Used for:  IEEE-754 floating-point arithmetic (the F extension). Built as an sbt
+           sub-project; see build.sbt.
+
+
+2. UART (serial port)
+---------------------
+Path:      src/main/scala/sacris_v/periphery/uart.scala
+Copyright: Copyright (c) 2014-2018, Technical University of Denmark, DTU Compute
+Author:    Martin Schoeberl (martin@jopdesign.com)
+License:   BSD 2-Clause License ("Simplified BSD"), as stated in the file header
+Note:      This file carries a DIFFERENT license from the rest of the
+           repository (BSD-2, not BSD-3) and therefore does NOT carry a
+           SaCriS-V SPDX header. Its original header is authoritative.
+
+
+3. Digilent Nexys Video Master XDC
+----------------------------------
+Path:      fpga/nexys_video/Nexys-Video-Master.xdc
+Copyright: Digilent, Inc.
+License:   MIT License (github.com/Digilent/digilent-xdc)
+Used for:  Pin reference for the Nexys Video board; the course constraints file
+           fpga/nexys_video/rtl_wrapper/nexys_video_top.xdc is derived from it.
+
+
+Build-time dependencies
+-----------------------
+Chisel (org.chipsalliance), Apache License 2.0, resolved by sbt and not
+redistributed in this repository.

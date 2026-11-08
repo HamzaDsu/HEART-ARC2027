@@ -1,0 +1,38 @@
+# Machine-specific and generated files
+build/
+build-*/
+.conda-env/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*.bak
+
+# Large models and binaries
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.riscv
+*.o
+*.a
+*.so
+*.bit
+*.dcp
+*.vcd
+*.fst
+*.wdb
+
+# Vivado temporary files
+.Xil/
+*.jou
+
+# Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa

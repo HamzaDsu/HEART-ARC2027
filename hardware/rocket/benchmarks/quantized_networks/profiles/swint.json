@@ -1,0 +1,498 @@
+{
+  "model_name": "swint",
+  "architecture": "vision_transformer",
+  "format": "pytorch",
+  "total_weight_parameters": 27521376,
+  "matched_weight_parameters": 27508224,
+  "weight_coverage_pct": 99.95,
+  "average_bits_matched": 8.0,
+  "packed_weights_matched_mib": 26.234,
+  "unmatched_config_layers": [],
+  "layers": [
+    {
+      "name": "patch_embed.proj",
+      "shape": [
+        96,
+        3,
+        4,
+        4
+      ],
+      "parameters": 4608,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.0.attn.qkv",
+      "shape": [
+        288,
+        96
+      ],
+      "parameters": 27648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.0.attn.proj",
+      "shape": [
+        96,
+        96
+      ],
+      "parameters": 9216,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.0.mlp.fc1",
+      "shape": [
+        384,
+        96
+      ],
+      "parameters": 36864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.0.mlp.fc2",
+      "shape": [
+        96,
+        384
+      ],
+      "parameters": 36864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.1.attn.qkv",
+      "shape": [
+        288,
+        96
+      ],
+      "parameters": 27648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.1.attn.proj",
+      "shape": [
+        96,
+        96
+      ],
+      "parameters": 9216,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.1.mlp.fc1",
+      "shape": [
+        384,
+        96
+      ],
+      "parameters": 36864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.0.blocks.1.mlp.fc2",
+      "shape": [
+        96,
+        384
+      ],
+      "parameters": 36864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.downsample.reduction",
+      "shape": [
+        192,
+        384
+      ],
+      "parameters": 73728,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.0.attn.qkv",
+      "shape": [
+        576,
+        192
+      ],
+      "parameters": 110592,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.0.attn.proj",
+      "shape": [
+        192,
+        192
+      ],
+      "parameters": 36864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.0.mlp.fc1",
+      "shape": [
+        768,
+        192
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.0.mlp.fc2",
+      "shape": [
+        192,
+        768
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.1.attn.qkv",
+      "shape": [
+        576,
+        192
+      ],
+      "parameters": 110592,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.1.attn.proj",
+      "shape": [
+        192,
+        192
+      ],
+      "parameters": 36864,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.1.mlp.fc1",
+      "shape": [
+        768,
+        192
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.1.blocks.1.mlp.fc2",
+      "shape": [
+        192,
+        768
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.downsample.reduction",
+      "shape": [
+        384,
+        768
+      ],
+      "parameters": 294912,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.0.attn.qkv",
+      "shape": [
+        1152,
+        384
+      ],
+      "parameters": 442368,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.0.attn.proj",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.0.mlp.fc1",
+      "shape": [
+        1536,
+        384
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.0.mlp.fc2",
+      "shape": [
+        384,
+        1536
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.1.attn.qkv",
+      "shape": [
+        1152,
+        384
+      ],
+      "parameters": 442368,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.1.attn.proj",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.1.mlp.fc1",
+      "shape": [
+        1536,
+        384
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.1.mlp.fc2",
+      "shape": [
+        384,
+        1536
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.2.attn.qkv",
+      "shape": [
+        1152,
+        384
+      ],
+      "parameters": 442368,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.2.attn.proj",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.2.mlp.fc1",
+      "shape": [
+        1536,
+        384
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.2.mlp.fc2",
+      "shape": [
+        384,
+        1536
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.3.attn.qkv",
+      "shape": [
+        1152,
+        384
+      ],
+      "parameters": 442368,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.3.attn.proj",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.3.mlp.fc1",
+      "shape": [
+        1536,
+        384
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.3.mlp.fc2",
+      "shape": [
+        384,
+        1536
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.4.attn.qkv",
+      "shape": [
+        1152,
+        384
+      ],
+      "parameters": 442368,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.4.attn.proj",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.4.mlp.fc1",
+      "shape": [
+        1536,
+        384
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.4.mlp.fc2",
+      "shape": [
+        384,
+        1536
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.5.attn.qkv",
+      "shape": [
+        1152,
+        384
+      ],
+      "parameters": 442368,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.5.attn.proj",
+      "shape": [
+        384,
+        384
+      ],
+      "parameters": 147456,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.5.mlp.fc1",
+      "shape": [
+        1536,
+        384
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.2.blocks.5.mlp.fc2",
+      "shape": [
+        384,
+        1536
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.downsample.reduction",
+      "shape": [
+        768,
+        1536
+      ],
+      "parameters": 1179648,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.0.attn.qkv",
+      "shape": [
+        2304,
+        768
+      ],
+      "parameters": 1769472,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.0.attn.proj",
+      "shape": [
+        768,
+        768
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.0.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "parameters": 2359296,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.0.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "parameters": 2359296,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.1.attn.qkv",
+      "shape": [
+        2304,
+        768
+      ],
+      "parameters": 1769472,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.1.attn.proj",
+      "shape": [
+        768,
+        768
+      ],
+      "parameters": 589824,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.1.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "parameters": 2359296,
+      "average_bits": 8.0
+    },
+    {
+      "name": "layers.3.blocks.1.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "parameters": 2359296,
+      "average_bits": 8.0
+    },
+    {
+      "name": "head.1",
+      "shape": [
+        100,
+        768
+      ],
+      "parameters": 76800,
+      "average_bits": 8.0
+    }
+  ],
+  "analysis_status": "checkpoint_metadata_estimate",
+  "limitations": [
+    "Packed storage covers matched weight tensors only.",
+    "Activation memory and runtime buffers excluded.",
+    "Inference operations and performance not measured."
+  ]
+}

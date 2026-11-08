@@ -1,0 +1,525 @@
+{
+  "status": "heuristic_ranking_complete",
+  "objective": "balanced",
+  "model": "Precompression_Baseline_V4",
+  "workload_profile": {
+    "model_name": "Precompression_Baseline_V4",
+    "architecture": "llama",
+    "parameters": 1100048384,
+    "layers": 22,
+    "embedding_size": 2048,
+    "context_length": 2048,
+    "attention_heads": 32,
+    "kv_heads": 4,
+    "dominant_quantization": "Q3_K",
+    "quantized_parameter_fraction": 0.9999,
+    "average_stored_bits_per_parameter": 3.626,
+    "weights_mib": 475.51,
+    "illustrative_f16_kv_cache_mib": 44.0,
+    "kv_head_dimensions_inferred": false,
+    "analysis_status": "metadata_based_estimation",
+    "limitations": [
+      "KV cache assumes FP16 storage and full context.",
+      "Runtime buffers and temporary activations excluded.",
+      "No measured inference speed or memory bandwidth."
+    ]
+  },
+  "runtime_memory_assessment": null,
+  "full_context_memory_status": "external_ram_unknown",
+  "board": "arty-a7-100",
+  "scope": "kernel",
+  "generated_candidates": 216,
+  "screened_candidates": 42,
+  "reference_configuration": {
+    "cores": 1,
+    "icache_kib": 16,
+    "dcache_kib": 16,
+    "scratchpad_kib": 128,
+    "l2_enabled": false,
+    "target_clock_mhz": 50
+  },
+  "reference_timing": {
+    "wns_ns": 0.571,
+    "tns_ns": 0.0,
+    "whs_ns": 0.026
+  },
+  "reference_selection": {
+    "status": "same_device_reference",
+    "reference_part": "xc7a100tcsg324-1",
+    "target_part": "xc7a100tcsg324-1",
+    "confidence": "limited"
+  },
+  "implemented_reference": {
+    "configuration": {
+      "cores": 1,
+      "icache_kib": 16,
+      "dcache_kib": 16,
+      "scratchpad_kib": 128,
+      "l2_enabled": false,
+      "target_clock_mhz": 50
+    },
+    "measured_resources": {
+      "luts": 42781,
+      "flip_flops": 24550,
+      "bram36_equivalent": 72,
+      "dsp": 24
+    },
+    "timing": {
+      "wns_ns": 0.571,
+      "tns_ns": 0.0,
+      "whs_ns": 0.026
+    },
+    "hardware_status": "bitstream_generated"
+  },
+  "recommendation_status": "estimated_not_synthesized",
+  "frequency_limit_note": "The clock ceiling comes from the implemented reference. Timing is not guaranteed for other designs.",
+  "recommended_exploration_candidate": {
+    "configuration": {
+      "cores": 1,
+      "icache_kib": 16,
+      "dcache_kib": 16,
+      "scratchpad_kib": 0,
+      "l2_enabled": false,
+      "target_clock_mhz": 50,
+      "validation": "not_synthesized"
+    },
+    "resource_estimates": {
+      "luts": 42106,
+      "flip_flops": 24392,
+      "bram36_equivalent": 40.0,
+      "dsp": 24
+    },
+    "throughput_proxy": 1.0,
+    "switching_proxy": 1.0,
+    "validation": "heuristic_only",
+    "resource_validation": "measured_implementation",
+    "resource_calibration_source": "/home/user/optimizer-rebuild-test/results/optimizer/calibration/arty100t_scratchpad.json",
+    "model_fit": {
+      "factor": 1.0,
+      "activation_vector_kib": 8.0,
+      "weight_tile_kib": 58.02,
+      "cache_coverage": 1.0,
+      "scratchpad_coverage": 0.0,
+      "status": "exploratory_workload_heuristic"
+    },
+    "model_adjusted_throughput_proxy": 1.0,
+    "priority_score": 1.0,
+    "matches_implemented_baseline": false,
+    "score": 1.0,
+    "pareto_objective_score": -0.696549,
+    "hardware_cost": {
+      "candidate": {
+        "cores": 1,
+        "icache_kib": 16,
+        "dcache_kib": 16,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "model_working_set": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "estimated_memory": {
+        "traffic": {
+          "status": "estimated",
+          "past_tokens": 1024,
+          "weight_reads_mib": 475.51,
+          "kv_reads_mib": 22.0,
+          "kv_writes_mib": 0.021,
+          "total_traffic_mib": 497.531,
+          "confidence": "uncalibrated",
+          "note": "Idealized traffic estimate, not measured bandwidth."
+        },
+        "status": "bandwidth_unknown",
+        "transfer_time_ms": null,
+        "memory_only_tokens_per_second": null,
+        "confidence": "uncalibrated"
+      },
+      "hardware_resources": {
+        "minimum_storage_kib": 32,
+        "raw_bram_capacity_kib": 607.5,
+        "minimum_storage_exceeds_raw_bram": false,
+        "estimated_utilization": {
+          "luts": 0.6641,
+          "flip_flops": 0.1924,
+          "bram36_equivalent": 0.2963,
+          "dsp": 0.1
+        },
+        "estimated_resource_overflows": []
+      },
+      "resident_model_memory": {
+        "required_mib": 519.51,
+        "available_mib": null,
+        "fits": null
+      },
+      "confidence": "uncalibrated",
+      "limitations": [
+        "Resource estimates are heuristic.",
+        "Working-set coverage does not predict cache misses.",
+        "Clock timing for this candidate is unverified.",
+        "Bandwidth estimates depend on supplied assumptions.",
+        "No measured power or energy prediction.",
+        "Streaming and model partitioning are not evaluated."
+      ]
+    },
+    "performance_assessment": {
+      "status": "heuristic_estimate",
+      "throughput_proxy": 1.0,
+      "measured_model_cycles": null,
+      "full_model_inference_measured": false,
+      "note": "Candidate performance remains heuristic. Kernel benchmarks are reported separately."
+    }
+  },
+  "pareto_candidate_count": 3,
+  "pareto_front": [
+    {
+      "configuration": {
+        "cores": 1,
+        "icache_kib": 32,
+        "dcache_kib": 32,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "resource_estimates": {
+        "luts": 46203,
+        "flip_flops": 24550,
+        "bram36_equivalent": 51,
+        "dsp": 24
+      },
+      "throughput_proxy": 1.015,
+      "switching_proxy": 1.048,
+      "validation": "heuristic_only",
+      "resource_validation": "heuristic_only",
+      "resource_calibration_source": null,
+      "model_fit": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "model_adjusted_throughput_proxy": 1.015,
+      "priority_score": 0.99148,
+      "matches_implemented_baseline": false,
+      "score": 1.015,
+      "pareto_objective_score": -1.414214
+    },
+    {
+      "configuration": {
+        "cores": 1,
+        "icache_kib": 16,
+        "dcache_kib": 16,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "resource_estimates": {
+        "luts": 42106,
+        "flip_flops": 24392,
+        "bram36_equivalent": 40.0,
+        "dsp": 24
+      },
+      "throughput_proxy": 1.0,
+      "switching_proxy": 1.0,
+      "validation": "heuristic_only",
+      "resource_validation": "measured_implementation",
+      "resource_calibration_source": "/home/user/optimizer-rebuild-test/results/optimizer/calibration/arty100t_scratchpad.json",
+      "model_fit": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "model_adjusted_throughput_proxy": 1.0,
+      "priority_score": 1.0,
+      "matches_implemented_baseline": false,
+      "score": 1.0,
+      "pareto_objective_score": -0.696549,
+      "hardware_cost": {
+        "candidate": {
+          "cores": 1,
+          "icache_kib": 16,
+          "dcache_kib": 16,
+          "scratchpad_kib": 0,
+          "l2_enabled": false,
+          "target_clock_mhz": 50,
+          "validation": "not_synthesized"
+        },
+        "model_working_set": {
+          "factor": 1.0,
+          "activation_vector_kib": 8.0,
+          "weight_tile_kib": 58.02,
+          "cache_coverage": 1.0,
+          "scratchpad_coverage": 0.0,
+          "status": "exploratory_workload_heuristic"
+        },
+        "estimated_memory": {
+          "traffic": {
+            "status": "estimated",
+            "past_tokens": 1024,
+            "weight_reads_mib": 475.51,
+            "kv_reads_mib": 22.0,
+            "kv_writes_mib": 0.021,
+            "total_traffic_mib": 497.531,
+            "confidence": "uncalibrated",
+            "note": "Idealized traffic estimate, not measured bandwidth."
+          },
+          "status": "bandwidth_unknown",
+          "transfer_time_ms": null,
+          "memory_only_tokens_per_second": null,
+          "confidence": "uncalibrated"
+        },
+        "hardware_resources": {
+          "minimum_storage_kib": 32,
+          "raw_bram_capacity_kib": 607.5,
+          "minimum_storage_exceeds_raw_bram": false,
+          "estimated_utilization": {
+            "luts": 0.6641,
+            "flip_flops": 0.1924,
+            "bram36_equivalent": 0.2963,
+            "dsp": 0.1
+          },
+          "estimated_resource_overflows": []
+        },
+        "resident_model_memory": {
+          "required_mib": 519.51,
+          "available_mib": null,
+          "fits": null
+        },
+        "confidence": "uncalibrated",
+        "limitations": [
+          "Resource estimates are heuristic.",
+          "Working-set coverage does not predict cache misses.",
+          "Clock timing for this candidate is unverified.",
+          "Bandwidth estimates depend on supplied assumptions.",
+          "No measured power or energy prediction.",
+          "Streaming and model partitioning are not evaluated."
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "cores": 1,
+        "icache_kib": 8,
+        "dcache_kib": 8,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "resource_estimates": {
+        "luts": 41070,
+        "flip_flops": 24550,
+        "bram36_equivalent": 40,
+        "dsp": 24
+      },
+      "throughput_proxy": 0.9925,
+      "switching_proxy": 0.976,
+      "validation": "heuristic_only",
+      "resource_validation": "heuristic_only",
+      "resource_calibration_source": null,
+      "model_fit": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "model_adjusted_throughput_proxy": 0.9925,
+      "priority_score": 1.00463,
+      "matches_implemented_baseline": false,
+      "score": 0.9925,
+      "pareto_objective_score": -1.0
+    }
+  ],
+  "selection_method": "estimated_pareto_tradeoff",
+  "selection_note": "Estimates are heuristic and not hardware validated.",
+  "top_candidates": [
+    {
+      "configuration": {
+        "cores": 1,
+        "icache_kib": 16,
+        "dcache_kib": 16,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "resource_estimates": {
+        "luts": 42106,
+        "flip_flops": 24392,
+        "bram36_equivalent": 40.0,
+        "dsp": 24
+      },
+      "throughput_proxy": 1.0,
+      "switching_proxy": 1.0,
+      "validation": "heuristic_only",
+      "resource_validation": "measured_implementation",
+      "resource_calibration_source": "/home/user/optimizer-rebuild-test/results/optimizer/calibration/arty100t_scratchpad.json",
+      "model_fit": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "model_adjusted_throughput_proxy": 1.0,
+      "priority_score": 1.0,
+      "matches_implemented_baseline": false,
+      "score": 1.0,
+      "pareto_objective_score": -0.696549,
+      "hardware_cost": {
+        "candidate": {
+          "cores": 1,
+          "icache_kib": 16,
+          "dcache_kib": 16,
+          "scratchpad_kib": 0,
+          "l2_enabled": false,
+          "target_clock_mhz": 50,
+          "validation": "not_synthesized"
+        },
+        "model_working_set": {
+          "factor": 1.0,
+          "activation_vector_kib": 8.0,
+          "weight_tile_kib": 58.02,
+          "cache_coverage": 1.0,
+          "scratchpad_coverage": 0.0,
+          "status": "exploratory_workload_heuristic"
+        },
+        "estimated_memory": {
+          "traffic": {
+            "status": "estimated",
+            "past_tokens": 1024,
+            "weight_reads_mib": 475.51,
+            "kv_reads_mib": 22.0,
+            "kv_writes_mib": 0.021,
+            "total_traffic_mib": 497.531,
+            "confidence": "uncalibrated",
+            "note": "Idealized traffic estimate, not measured bandwidth."
+          },
+          "status": "bandwidth_unknown",
+          "transfer_time_ms": null,
+          "memory_only_tokens_per_second": null,
+          "confidence": "uncalibrated"
+        },
+        "hardware_resources": {
+          "minimum_storage_kib": 32,
+          "raw_bram_capacity_kib": 607.5,
+          "minimum_storage_exceeds_raw_bram": false,
+          "estimated_utilization": {
+            "luts": 0.6641,
+            "flip_flops": 0.1924,
+            "bram36_equivalent": 0.2963,
+            "dsp": 0.1
+          },
+          "estimated_resource_overflows": []
+        },
+        "resident_model_memory": {
+          "required_mib": 519.51,
+          "available_mib": null,
+          "fits": null
+        },
+        "confidence": "uncalibrated",
+        "limitations": [
+          "Resource estimates are heuristic.",
+          "Working-set coverage does not predict cache misses.",
+          "Clock timing for this candidate is unverified.",
+          "Bandwidth estimates depend on supplied assumptions.",
+          "No measured power or energy prediction.",
+          "Streaming and model partitioning are not evaluated."
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "cores": 1,
+        "icache_kib": 8,
+        "dcache_kib": 8,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "resource_estimates": {
+        "luts": 41070,
+        "flip_flops": 24550,
+        "bram36_equivalent": 40,
+        "dsp": 24
+      },
+      "throughput_proxy": 0.9925,
+      "switching_proxy": 0.976,
+      "validation": "heuristic_only",
+      "resource_validation": "heuristic_only",
+      "resource_calibration_source": null,
+      "model_fit": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "model_adjusted_throughput_proxy": 0.9925,
+      "priority_score": 1.00463,
+      "matches_implemented_baseline": false,
+      "score": 0.9925,
+      "pareto_objective_score": -1.0
+    },
+    {
+      "configuration": {
+        "cores": 1,
+        "icache_kib": 32,
+        "dcache_kib": 32,
+        "scratchpad_kib": 0,
+        "l2_enabled": false,
+        "target_clock_mhz": 50,
+        "validation": "not_synthesized"
+      },
+      "resource_estimates": {
+        "luts": 46203,
+        "flip_flops": 24550,
+        "bram36_equivalent": 51,
+        "dsp": 24
+      },
+      "throughput_proxy": 1.015,
+      "switching_proxy": 1.048,
+      "validation": "heuristic_only",
+      "resource_validation": "heuristic_only",
+      "resource_calibration_source": null,
+      "model_fit": {
+        "factor": 1.0,
+        "activation_vector_kib": 8.0,
+        "weight_tile_kib": 58.02,
+        "cache_coverage": 1.0,
+        "scratchpad_coverage": 0.0,
+        "status": "exploratory_workload_heuristic"
+      },
+      "model_adjusted_throughput_proxy": 1.015,
+      "priority_score": 0.99148,
+      "matches_implemented_baseline": false,
+      "score": 1.015,
+      "pareto_objective_score": -1.414214
+    }
+  ],
+  "confidence": "low",
+  "limitations": [
+    "Hardware resource figures for new candidates are heuristic.",
+    "No measured power or full-model inference performance.",
+    "No timing or implementation guarantee for new candidates.",
+    "Core-count scaling assumes potential parallel throughput."
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "model_name": "vgg11",
+  "architecture": "cnn",
+  "format": "pytorch",
+  "total_weight_parameters": 28135808,
+  "matched_weight_parameters": 28133056,
+  "weight_coverage_pct": 99.99,
+  "average_bits_matched": 3.764,
+  "packed_weights_matched_mib": 12.624,
+  "unmatched_config_layers": [],
+  "layers": [
+    {
+      "name": "features.0",
+      "shape": [
+        64,
+        3,
+        3,
+        3
+      ],
+      "parameters": 1728,
+      "average_bits": 4.562
+    },
+    {
+      "name": "features.4",
+      "shape": [
+        128,
+        64,
+        3,
+        3
+      ],
+      "parameters": 73728,
+      "average_bits": 7.031
+    },
+    {
+      "name": "features.8",
+      "shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "parameters": 294912,
+      "average_bits": 7.188
+    },
+    {
+      "name": "features.11",
+      "shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "parameters": 589824,
+      "average_bits": 7.281
+    },
+    {
+      "name": "features.15",
+      "shape": [
+        512,
+        256,
+        3,
+        3
+      ],
+      "parameters": 1179648,
+      "average_bits": 4.66
+    },
+    {
+      "name": "features.18",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "parameters": 2359296,
+      "average_bits": 4.57
+    },
+    {
+      "name": "features.22",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "parameters": 2359296,
+      "average_bits": 4.32
+    },
+    {
+      "name": "features.25",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "parameters": 2359296,
+      "average_bits": 6.961
+    },
+    {
+      "name": "classifier.0",
+      "shape": [
+        4096,
+        512
+      ],
+      "parameters": 2097152,
+      "average_bits": 2.888
+    },
+    {
+      "name": "classifier.3",
+      "shape": [
+        4096,
+        4096
+      ],
+      "parameters": 16777216,
+      "average_bits": 2.961
+    },
+    {
+      "name": "classifier.6",
+      "shape": [
+        10,
+        4096
+      ],
+      "parameters": 40960,
+      "average_bits": 8.0
+    }
+  ],
+  "analysis_status": "checkpoint_metadata_estimate",
+  "limitations": [
+    "Packed storage covers matched weight tensors only.",
+    "Activation memory and runtime buffers excluded.",
+    "Inference operations and performance not measured."
+  ]
+}
