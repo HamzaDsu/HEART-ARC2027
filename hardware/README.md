@@ -143,19 +143,7 @@ The optimizer has a shared entry point, but **Rocket and SaCriS-V have different
 
 Review [`optimizer/unified_cli.py`](optimizer/unified_cli.py), the processor-specific optimization modules, and the hardware benchmark/synthesis drivers before executing a measured-data selection. Record the versioned configuration, toolchain, objective, workload, input hashes and candidate set in your local experiment log. Do not substitute arbitrary estimates for missing measurements.
 
-## 9. Repository and paper: what is deliberately excluded?
-
-The **ARC paper** is the location for experimental methodology, comparisons, figures and numerical findings. This **source-only repository** intentionally excludes:
-
-- Generated Vivado files, checkpoint directories, `.bit` images and reports.
-- Large benchmark logs, result tables, traces and plot exports.
-- Model weights, parameter blobs and prepared inference datasets.
-- Compiled ELF/RISC-V executables and machine-specific tool installs.
-- Private credentials, host-specific USB identifiers and unpublished personal data.
-
-The absence of result files is intentional; it also limits automatic reproduction. Users must regenerate the relevant experiment inputs and independently validate them against the paper. Existing `.gitignore` rules help avoid accidental commits but **do not replace a manual public-release audit**.
-
-## 10. Reproducibility and publication checklist
+## 9. Reproducibility and publication checklist
 
 - [ ] Verify source provenance and check the exact commit used for the paper.
 - [ ] Confirm third-party copyright notices, licenses and redistribution permissions.
@@ -169,7 +157,7 @@ The absence of result files is intentional; it also limits automatic reproductio
 
 **Current release boundary:** The original lab carried out FPGA programming and selected physical Rocket workload tests. A *fresh-clone → RTL → bitstream → ELF → FPGA execution* reproduction using only the publication source is **not yet validated**. This statement should be updated only after that complete workflow is repeated and checked.
 
-## 11. Contributor guidance
+## 10. Contributor guidance
 
 This directory is the HEART paper's hardware workspace. Keep contributions limited to relevant RISC-V/Rocket/Chipyard and SaCriS-V configuration code, benchmark sources, simulator and synthesis scripts, board constraints, and clear reproduction instructions. Avoid full Vivado build trees, large waveform captures, credentials, generated artifacts, and unrelated platform experiments.
 
