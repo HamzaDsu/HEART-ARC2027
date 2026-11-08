@@ -1,4 +1,4 @@
-# FPGA setup and execution — Rocket / SaCriS-V
+# FPGA setup and execution — Rocket 
 
 This guide describes the Nexys Video FPGA workflow for the HEART hardware
 sources. It is **model-independent**: substitute any compatible RISC-V test
