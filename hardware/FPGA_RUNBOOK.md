@@ -1,247 +1,196 @@
-# HEART / ARC 2027: Nexys Video FPGA reproduction runbook
+# FPGA setup and execution — Rocket / SaCriS-V
 
-This source-only guide documents the **Rocket/Chipyard Nexys Video physical
-execution workflow** actually exercised in the November 2026 lab, plus the
-separate **SaCriS-V RTL/synthesis** path. Reproduction commands must use
-locally rebuilt or separately supplied software and bitstream artifacts.
+This guide describes the Nexys Video FPGA workflow for the HEART hardware
+sources. It is **model-independent**: substitute any compatible RISC-V test
+program or inference workload, provided its ISA, memory requirements, linker
+script, runtime inputs, and UART interface match the selected Rocket design.
 
-**Evidence boundaries.** We verified the Nexys Video JTAG interface and a
-Rocket 16 KiB bitstream load, UART-TSI Hello World, model payload probes,
-DDR checks and a physical LeViT-384 inference run in the original local lab.
-The public repository **does not include** model weights, parameter binary
-blobs, large ELF executables, bitstreams, or generated Vivado outputs. We have
-**not demonstrated an end-to-end fresh clone -> bitstream -> LeViT run** from
-this publication directory. SaCriS-V was simulated and synthesized, **not
-booted on the physical board**. The original lab also used a faster UART
-configuration; compatibility must be checked before reusing its artifacts.
+**Validation boundary:** The original lab verified JTAG detection and FPGA
+programming, UART-TSI boot/smoke tests, memory checks, and workload execution
+on a physical Rocket-based Nexys Video design. The publication repository has
+**not** yet been validated end-to-end from a fresh clone through bitstream
+creation and workload execution. SaCriS-V was simulated and synthesized, not
+physically booted on the board. The two processor paths must not be conflated.
 
-## 1. Directory map and requirements
+No model weights, input blobs, prebuilt RISC-V executables, bitstreams, Vivado
+outputs, benchmark results, or proprietary tool distributions are included.
+Generated numerical inputs required by optimizer selection must be recreated
+from the documented benchmark/synthesis workflow.
+
+## 1. Source layout and tools
 
 - `rocket/reproducibility/chipyard/configs/`: custom Rocket/Chipyard Scala
-  configurations to be integrated with a matching Chipyard checkout.
-- `rocket/benchmarks/quantized_networks/riscv/levit384/`: LeViT C source and
-  model preparation helpers, **not** model weights or prepared input binaries.
-- `rocket/reproducibility/scripts/`: toolchain/bootstrap scripts. Read these
-  scripts and verify pinned revisions; Chipyard is not vendored here.
-- `sacris-v/`: processor Chisel sources, benchmark and Verilator harness.
-- `optimizer/`: unified CLI source. The measured SaCriS-V selector needs
-  generated performance/resource files and cannot select a configuration from
-  this source-only repository without them.
+  configuration source to integrate into a compatible Chipyard checkout.
+- `rocket/benchmarks/`: benchmark kernels and workload source/preparation code.
+- `rocket/reproducibility/scripts/`: environment, toolchain, and build helpers.
+- `sacris-v/`: SaCriS-V processor RTL generator, simulation harness, and
+  synthesis scripts.
+- `optimizer/`: unified Rocket/SaCriS-V optimizer CLI.
+- `scripts/check_nexys_video.sh`: read-only prerequisite and board inspection.
+- `scripts/run_nexys_uart_tsi.sh`: parameterized FPGA programming/ELF loader.
 
-Hardware: Digilent Nexys Video, Artix-7 `xc7a200tsbg484-1`.
-The lab used Vivado 2022.2, a RISC-V bare-metal toolchain, Chipyard,
-`openFPGALoader`, `uart_tsi`, Ubuntu/WSL and `usbipd-win`. Use the matching
-board support packages, cable drivers, peripheral configuration and tool
-revisions. Retain all third-party notices and licenses before public release.
+Target board: Digilent **Nexys Video** with Artix-7
+`XC7A200T-SBG484-1`. The original setup used Vivado 2022.2, Chipyard,
+a RISC-V cross toolchain, `openFPGALoader`, `uart_tsi`, Ubuntu/WSL, and
+`usbipd-win`. Check source/tool revisions and third-party licenses before
+public redistribution.
 
-## 2. Windows USB passthrough and WSL serial preflight
+## 2. Attach board interfaces (Windows + WSL)
 
-The **Windows PowerShell administrator** side of the lab used:
+The Windows PowerShell administrator may need to pass both USB interfaces to
+WSL. Identify BUSIDs using `usbipd list`; do not copy machine-specific IDs.
 
 ```powershell
 wsl -l -v
-usbipd --version
 usbipd list
-# Discover the actual BUSIDs; example lab IDs are not universal:
-usbipd bind --busid 1-1
-usbipd bind --busid 1-2
-usbipd attach --wsl --busid 1-1
-usbipd attach --wsl --busid 1-2
+usbipd bind --busid <JTAG_BUSID>
+usbipd bind --busid <UART_BUSID>
+usbipd attach --wsl --busid <JTAG_BUSID>
+usbipd attach --wsl --busid <UART_BUSID>
 ```
 
-Connect **J12 PROG/JTAG** and **J13 UART** as separate USB interfaces, and
-power the board correctly. In Ubuntu/WSL:
+Power the FPGA and connect the appropriate JTAG/programming and serial UART
+interfaces. In Ubuntu/WSL:
 
 ```bash
 lsusb
-lsusb | grep -Ei '0403:6010|0403:6001|FTDI|Digilent' || true
 ls -l /dev/ttyUSB* 2>/dev/null || true
-id -nG
 openFPGALoader --list-boards | grep -i nexys
 openFPGALoader --detect -b nexysVideo
+bash hardware/scripts/check_nexys_video.sh  # from repository root
 ```
 
-The original lab observed JTAG IDCODE `0x3636093`, 6 MHz, and UART
-`/dev/ttyUSB2`. **Do not assume that serial path on a different machine.**
-For permission errors, arrange dialout-group access and sign in again, or
-use `sudo` only for the trusted UART wrapper. The helper
-`scripts/check_nexys_video.sh` performs a read-only local inspection.
+For reference, the original lab detected JTAG IDCODE `0x3636093` and used a
+serial interface enumerated as `/dev/ttyUSB2`. **The device path is not
+portable**: determine the correct port for your machine and verify permissions.
 
-## 3. Rebuild Rocket / generate the design source
+## 3. Generate Rocket hardware and build a compatible bitstream
 
-The verified lab used a separate Chipyard checkout at `~/chipyard`. To prepare
-that checkout, follow `rocket/reproducibility/README.md` and the setup scripts.
-Integrate the relevant Scala config definitions into the matching Chipyard
-`fpga/src/main/scala/nexysvideo/` package before elaboration.
+The custom Scala files are source overlays, not a vendored Chipyard tree.
+Follow `rocket/reproducibility/README.md` for environment setup, verify the
+Chipyard revision, and install the relevant Scala configuration in its
+`fpga/src/main/scala/nexysvideo/` package.
 
-From the **Chipyard directory** (not the HEART repository), the earlier lab
-successfully generated Verilog using this *fast UART* variant:
+The following Chipyard command was used successfully for **Verilog generation**
+with a custom fast-UART configuration:
 
 ```bash
-cd ~/chipyard
+cd "${CHIPYARD_DIR:-$HOME/chipyard}"
 source env.sh
 CONFIG=UnifiedResource1Core16K50FastUARTNexysVideoConfig
 make -C fpga SUB_PROJECT=nexysvideo CONFIG="$CONFIG" verilog
 ```
 
-That variant uses a UART-TSI initialization baud rate of **921600** in its
-custom Scala config. The standard bitstream below used the non-FastUART
-`UnifiedResource1Core16K50NexysVideoConfig`. Match the actual bitstream,
-UART-TSI host settings, and baud rate; they are **not interchangeable by
-assumption**. A publication copy of the fast-UART Scala source is included
-only if it was recovered from the local lab checkout.
+The additional source
+`rocket/reproducibility/chipyard/configs/UnifiedNexysVideoFastUARTConfigs.scala`
+uses `WithUARTTSIClient(initBaudRate = 921600)`. The earlier baseline FPGA
+bitstream used `UnifiedResource1Core16K50NexysVideoConfig` (without fast UART).
+**Do not mix UART baud rate, bitstream, host loader, or hardware configuration.**
 
-The run shown above verified **Verilog generation**, not the bitstream build.
-The precise place/route and `make` target for building the bitstream must be
-confirmed against your pinned Chipyard Makefile. Do not claim the publication
-can create a working bitstream merely because Scala elaboration succeeds.
-Before programming, verify placement, setup and hold timing, part number,
-constraints, and generated `.bit` provenance. Do not substitute a bitstream
-from an unrelated board/configuration.
+The repository does not yet provide a fresh-clone-validated, one-command
+Vivado place-and-route/bitstream build. Use the matching Chipyard FPGA
+Makefile and board packages; check implementation reports, constraints,
+setup/hold timing, and bitstream provenance before programming.
 
-## 4. Program known-good Rocket bitstream onto Nexys Video
+## 4. Program the FPGA (bitstream supplied locally)
 
-The following **exact command form** succeeded in the original physical lab.
-Set `BIT` to a *local* generated or separately provided compatible bitstream:
+Set an **absolute path** to your locally built compatible bitstream:
 
 ```bash
-BIT="$HOME/nexys-video-sunday-deployment/fpga/UnifiedResource1Core16K50NexysVideoConfig.bit"
-test -s "$BIT" || { echo 'Missing local bitstream'; exit 1; }
-sha256sum "$BIT"          # record provenance outside the repo
+export FPGA_BITSTREAM=/absolute/path/to/rocket_design.bit
+
+test -s "$FPGA_BITSTREAM"
+sha256sum "$FPGA_BITSTREAM"
 openFPGALoader --detect -b nexysVideo
-openFPGALoader -b nexysVideo -m "$BIT"  # SRAM programming; volatile
+openFPGALoader -b nexysVideo -m "$FPGA_BITSTREAM"
 ```
 
-The lab's JTAG programming completed successfully. The `.bit` file above is
-**not shipped** in HEART. Reprogram/reset between repeated benchmark runs.
-Do not confuse the *original* non-FastUART bitstream with the later FastUART
-build unless both configuration and host baud are verified.
+`-m` programs volatile SRAM. Generated `.bit` files are intentionally not
+included. Reset or reprogram the board between runs as required by the design.
 
-## 5. Check UART-TSI with Hello World before model inference
+## 5. Load a generic RISC-V test or inference executable
 
-The original deployment's wrapper called the host loader as follows:
+Compile the application for the **selected Rocket ISA/ABI** and its memory
+map. Ensure embedded or externally supplied runtime data is available and
+compatible with DDR capacity. First validate the board with a small known-good
+Hello World or memory probe, before running a large workload.
+
+Supply paths to your own loader, target ELF, and serial device:
 
 ```bash
-PORT=/dev/ttyUSB2      # example only; inspect your own device
-UART_TSI="$HOME/nexys-video-sunday-deployment/fpga/uart_tsi"
-HELLO="$HOME/nexys-video-sunday-deployment/fpga/hello.riscv"
-test -x "$UART_TSI" && test -s "$HELLO" && test -e "$PORT"
-"$UART_TSI" "+tty=$PORT" +selfcheck "$HELLO"
+export UART_TSI=/absolute/path/to/uart_tsi
+export FPGA_PORT=/dev/ttyUSBX
+export WORKLOAD_ELF=/absolute/path/to/workload.riscv
+
+# From HEART-ARC2027 repository root; inspect commands before interacting with hardware:
+bash hardware/scripts/run_nexys_uart_tsi.sh \
+  --bitstream "$FPGA_BITSTREAM" \
+  --uart-tsi "$UART_TSI" \
+  --elf "$WORKLOAD_ELF" \
+  --port "$FPGA_PORT" \
+  --flash --dry-run
+
+# Remove --dry-run only after checking the output, connections, and configuration.
+bash hardware/scripts/run_nexys_uart_tsi.sh \
+  --bitstream "$FPGA_BITSTREAM" \
+  --uart-tsi "$UART_TSI" \
+  --elf "$WORKLOAD_ELF" \
+  --port "$FPGA_PORT" \
+  --flash
 ```
 
-The operator also verified this equivalent packaged invocation:
+The same host loader can be used directly if the FPGA is already programmed:
 
 ```bash
-cd ~/nexys-video-sunday-deployment
-sudo timeout --foreground 120s ./run_boot_test.sh /dev/ttyUSB2 hello
+"$UART_TSI" "+tty=$FPGA_PORT" +selfcheck "$WORKLOAD_ELF"
 ```
 
-The original board returned a Hello World message from a Rocket core with
-successful ELF load/self-check and clean exit. If the UART loader warns about
-resetting before another run, **reset or reprogram** the FPGA before repeating.
+**Provenance distinction:** The `+tty=... +selfcheck` UART-TSI invocation
+pattern was exercised in the original lab. The generic parameterized helper
+and public source directory have not yet undergone an independent, end-to-end
+physical reproduction test. A successful program exit does not itself prove
+numerical inference correctness; compare output against a trusted reference.
 
-## 6. LeViT-384 source and physical inference pathway
+## 6. SaCriS-V simulation and FPGA synthesis (separate from Rocket execution)
 
-**LeViT is the name of the model; the physical target is the Rocket processor,
-not SaCriS-V.** The recorded executable in the original lab was:
+From `hardware/sacris-v/`, consult `README.md`, `run_sim.sh`, and
+`software/health_slm/Makefile` for RTL simulation and quantized kernel tests.
+The original four configurations were `DualIMFB_SLM_128K`, `IMB_SLM_128K`,
+`IMF_SLM_128K`, and `IMF_TMR_SLM_128K`. Their synthesis source is in
+`fpga/synthesis/*/synth.tcl`. Inspect the scripts' original path assumptions
+and adapt them to the publication layout before executing.
 
-```text
-~/levit384-fpga-build/levit384-port/levit384_cyclehex_fpga.riscv
-```
+SaCriS-V performance numbers were gathered using RTL kernel simulation,
+not physical neural-network inference. Post-synthesis resources must not be
+presented as a completed timing-closed or programmed FPGA deployment.
 
-The lab's recorded physical log was outside this repository:
+## 7. Unified optimizer
 
-```text
-~/levit384-fpga-build/levit384_physical_16k_cyclehex.log
-```
-
-A source file used for cycle instrumentation was locally named
-`levit384_connected_timed_fpga.c` in the same `levit384-port` directory.
-The program printed markers such as `LEVIT384_CYCLES_HI`,
-`LEVIT384_CYCLES_LO`, `LEVIT384_LOGIT_*_BITS`, and `predicted_class`.
-The `rdcycle`-based count is **program timing instrumentation**, not a direct
-Vivado timing result. The original model used embedded/linked payloads and
-required a compatible memory map and DDR capacity. The **model executable,
-weights and embedded inputs are intentionally omitted** from HEART.
-
-Once the physical board has been programmed with the matching Rocket
-bitstream and a **known-compatible** 64-bit RISC-V ELF has been rebuilt:
+From the repository root:
 
 ```bash
-PORT=/dev/ttyUSB2   # replace with your detected serial device
-UART_TSI="$HOME/nexys-video-sunday-deployment/fpga/uart_tsi"
-ELF="$HOME/levit384-fpga-build/levit384-port/levit384_cyclehex_fpga.riscv"
-test -x "$UART_TSI" && test -s "$ELF" && test -e "$PORT"
-"$UART_TSI" "+tty=$PORT" +selfcheck "$ELF"
-```
-
-This is the verified **UART-TSI invocation pattern** from the original
-wrapper, adapted to the recorded LeViT ELF; the exact original LeViT launch
-line was not recovered from the available logs. Do not represent this example
-as an independently re-executed LeViT session. Before interpreting a new run,
-check model runtime payload provisioning, serial speed, boot/reset state,
-exit code and classification/logit markers. For a convenient, explicit local
-run, use `scripts/run_nexys_uart_tsi.sh --help`.
-
-Physical smoke testing was performed first with small probe/Hello programs
-(including memory and DDR checks), not by assuming a full neural network
-would immediately run after loading the bitstream.
-
-## 7. SaCriS-V: independent simulation/synthesis path
-
-From `hardware/sacris-v/`, see `README.md`, `run_sim.sh` and the C benchmark
-Makefile. Generate config-specific Chisel RTL and use Verilator to run the
-`small` and `small-spad` Q3_K x Q8_K kernels. Confirm completion and checksums.
-The memory-matched configs are `DualIMFB_SLM_128K`, `IMB_SLM_128K`,
-`IMF_SLM_128K`, and `IMF_TMR_SLM_128K`.
-
-Synthesis scripts are in `sacris-v/fpga/synthesis/*/synth.tcl`, but were
-moved from an old results directory. **Inspect and update their paths** for
-this publication layout before running Vivado. They are not yet portable
-one-command scripts. SaCriS-V was **not deployed to Nexys Video** in the
-experiments reported here; its results must not be described as physical
-FPGA model inference.
-
-## 8. Collect evidence without committing results
-
-To reproduce the paper, retain a separate **local, ignored** lab record of:
-board/device/bitstream hash, tool versions, Git revision, exact build and
-run commands, timing reports, UART-TSI output, program exit, hardware cycle
-counters, logits/classification, input/model checksums and physical reset
-state. Distinguish (1) synthesis resource utilization, (2) Verilator kernel
-cycles, (3) emulator output, and (4) on-board model inference.
-
-This public source tree intentionally excludes `.bit`, `.riscv`, `.bin`,
-`.dcp`, `.rpt`, `.log`, model weights, result tables and raw experiments.
-A **separate provenance-linked artifact bundle** or documented regenerators
-are still needed for an external researcher to reproduce numerical paper
-results end-to-end; do not present this as completed until verified.
-
-## 9. Unified optimizer CLI
-
-```bash
-cd /path/to/HEART-ARC2027/hardware
+cd hardware
 python3 -m optimizer.unified_cli --processor rocket --help
 python3 -m optimizer.unified_cli --processor sacris-v --help
-# To run selections, first regenerate the required measured-data inputs.
 ```
 
-The SaCriS-V selector reads benchmark logs and synthesis resource files that
-are not included in HEART. Likewise, the Rocket five-model workflow may
-reference saved measurement/profile inputs that must be regenerated or
-obtained separately. A `--help` success validates argument parsing, not an
-end-to-end optimizer or on-board execution.
+The measured-data selectors need regenerated input traces/resource summaries.
+The source-only release does not include all experiment inputs required to
+recreate optimizer recommendations automatically. Running `--help` tests
+CLI parsing, not FPGA operation or result reproducibility.
 
-## 10. Release checklist
+## 8. Evidence and public-release checklist
 
-- [ ] Verify the exact Chipyard commit, Scala config installation and Vivado
-      synthesis/implementation make target on a clean environment.
-- [ ] Validate the complete FPGA load/LeViT inference path **from this public
-      source plus documented external artifacts**, recording the UART baud.
-- [ ] Rebuild or document the source for the 64-bit `levit384_cyclehex_fpga.riscv`
-      ELF, including runtime parameter creation and linker/memory requirements.
-- [ ] Review third-party dependency licenses and public redistribution rights.
-- [ ] Document how to regenerate optimizer measurement inputs without shipping
-      generated experiment results in this source-only repository.
-- [ ] Verify no credentials, private datasets or confidential material appear
-      in any tracked file or Git history before changing visibility.
+Keep experimental outputs in a **separate local, ignored directory**: hardware
+revision, tool versions, device and bitstream hash, compile/link commands,
+program exit code, UART transcript, reference output checks, cycle counters,
+resource utilization, Vivado timing and relevant power-assumption reports.
+Do not commit these large/generated files to the source-only repository.
+
+- [ ] Pin and validate Chipyard/toolchain/tool versions on a clean machine.
+- [ ] Rebuild the bitstream with the correct board constraints and timing checks.
+- [ ] Build or obtain a portable RISC-V workload executable and required data.
+- [ ] Repeat the FPGA Hello/memory test and workload execution from fresh source.
+- [ ] Verify which measurements are simulation, synthesis, or physical-board data.
+- [ ] Document regeneration of any benchmark inputs needed by the optimizer.
+- [ ] Review third-party licenses, secret scanning, and public-release rights.
