@@ -1,0 +1,15 @@
+{
+  "llama_cpp_revision": "a868c3e3c56657f7e8a6231190dbbe90e7dd86c0",
+  "fp16_gguf_size_bytes": 2201017632,
+  "calibration_inputs": {
+    "uniform_calibration_96.txt": "7b9d5b5ab38088bd7d43aa66f314ca1e4e6797cfdd695f312b195711809e0250",
+    "safety_calibration.txt": "ac35193635781a1c14c65ea5eacaed59762503276e82a78845112b0deff9b1e5"
+  },
+  "expected_outputs": {
+    "uniform_imatrix_96.gguf": "3bff32b251ce2723b655370fc984436785e00b82e8f6890ec5a2dbab53c39d44",
+    "safety_imatrix.gguf": "dc395152d7a118f0977641071872fd723fac1a777e0fbfd1b6a31547e5fc896d",
+    "v4_q3ks_no_imatrix.gguf": "20de757d13a27313278535f03b0c101a66ab0687e15ca040507666f871e4ab02",
+    "v4_q3ks_uniform96.gguf": "3daeffc8751206c2a84e5363c9197a8138a0eff1865243ec571c12ee65bb695c",
+    "v4_q3ks_safety_rebuilt.gguf": "9d22702da628362269ff0e2847cfc55d5e65b6e217134f97e7026c7e1610fbb0"
+  }
+}

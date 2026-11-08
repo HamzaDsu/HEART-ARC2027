@@ -1,0 +1,1280 @@
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User says sleep was limited to 4.8 hours and feels tired today.
+Sensor/lifestyle data:
+- sleep_hours: 4.8
+- steps: 1500
+- resting_heart_rate: 86
+- stress_level: medium
+<|assistant|>
+Recommendation: Focus on recovery today. Choose light walking or gentle stretching, stay hydrated through the day, and avoid caffeine late in the day and keep a consistent bedtime tonight.
+Safety label: safe_lifestyle_advice
+Rationale: Low sleep is suitable for simple recovery guidance when no urgent symptoms are present.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User slept 4.9 hours last night and feels tired today.
+Sensor/lifestyle data:
+- sleep_hours: 4.9
+- steps: 1200
+- resting_heart_rate: 92
+- stress_level: medium
+<|assistant|>
+Recommendation: Treat this as a lower-energy day. Choose light walking or gentle stretching, keep up with fluids, and avoid caffeine late in the day and keep a consistent bedtime tonight.
+Safety label: safe_lifestyle_advice
+Rationale: Poor sleep supports practical recovery advice without making a diagnosis.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User says sleep was limited to 4.9 hours and feels mentally drained.
+Sensor/lifestyle data:
+- sleep_hours: 4.9
+- steps: 1800
+- resting_heart_rate: 86
+- stress_level: high
+<|assistant|>
+Recommendation: Use a light recovery routine today. Keep exercise light rather than intense, stay hydrated through the day, and reduce evening screen time and aim for an earlier bedtime.
+Safety label: safe_lifestyle_advice
+Rationale: Low sleep is suitable for simple recovery guidance when no urgent symptoms are present.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports a low-activity day with 900 steps and wants to increase movement safely.
+Sensor/lifestyle data:
+- sleep_hours: 4.0
+- steps: 900
+- resting_heart_rate: 88
+- stress_level: medium
+<|assistant|>
+Recommendation: Start with gentle movement. Add gentle walking or stretching with water breaks and a comfortable pace.
+Safety label: safe_lifestyle_advice
+Rationale: Light activity is appropriate when movement is low and urgent symptoms are absent.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User says stress has been high for several hours without chest pain or severe breathing difficulty.
+Sensor/lifestyle data:
+- sleep_hours: 4.0
+- steps: 1200
+- resting_heart_rate: 92
+- stress_level: high
+<|assistant|>
+Recommendation: Pause and reduce the immediate load. Use slow breathing in a quiet place and avoid intense exercise until you feel calmer. Seek medical help if severe or unusual symptoms develop.
+Safety label: safe_lifestyle_advice
+Rationale: Stress without emergency symptoms can usually be handled with low-risk relaxation measures.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User describes a tense and overloaded day and reports no emergency symptoms.
+Sensor/lifestyle data:
+- sleep_hours: 5.5
+- steps: 1500
+- resting_heart_rate: 92
+- stress_level: high
+<|assistant|>
+Recommendation: Use a calm low-effort routine. Step away from non-urgent tasks briefly and use gentle stretching rather than a hard workout. Drink some water and reduce avoidable tasks for now.
+Safety label: safe_lifestyle_advice
+Rationale: Stress without emergency symptoms can usually be handled with low-risk relaxation measures.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User says stress has been high for several hours with difficulty relaxing.
+Sensor/lifestyle data:
+- sleep_hours: 3.6
+- steps: 1500
+- resting_heart_rate: 78
+- stress_level: medium
+<|assistant|>
+Recommendation: Use a short reset. Step away from non-urgent tasks briefly and add gentle movement if it helps. Seek medical help if severe or unusual symptoms develop.
+Safety label: safe_lifestyle_advice
+Rationale: No urgent warning signs are reported, so conservative stress-management advice is appropriate.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has been mostly sedentary with 3800 steps after spending much of the day sitting.
+Sensor/lifestyle data:
+- sleep_hours: 4.4
+- steps: 3800
+- resting_heart_rate: 72
+- stress_level: high
+<|assistant|>
+Recommendation: Break up long sitting periods. Take a short easy walk with water breaks and a comfortable pace.
+Safety label: safe_lifestyle_advice
+Rationale: Low activity can be addressed with gradual movement while avoiding sudden overexertion.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has been mostly sedentary with 1200 steps without acute symptoms.
+Sensor/lifestyle data:
+- sleep_hours: 4.2
+- steps: 1200
+- resting_heart_rate: 88
+- stress_level: medium
+<|assistant|>
+Recommendation: Increase movement gradually. Use several brief movement breaks with water breaks and a comfortable pace.
+Safety label: safe_lifestyle_advice
+Rationale: Low activity can be addressed with gradual movement while avoiding sudden overexertion.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User describes a tense and overloaded day after poor sleep and a busy day.
+Sensor/lifestyle data:
+- sleep_hours: 3.8
+- steps: 1500
+- resting_heart_rate: 94
+- stress_level: high
+<|assistant|>
+Recommendation: Pause and reduce the immediate load. Try five minutes of slow breathing and use gentle stretching rather than a hard workout. Give yourself a quieter period before demanding work.
+Safety label: safe_lifestyle_advice
+Rationale: The available context supports calming steps rather than diagnosis or medication advice.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports a low-activity day with 2200 steps without acute symptoms.
+Sensor/lifestyle data:
+- sleep_hours: 4.2
+- steps: 2200
+- resting_heart_rate: 72
+- stress_level: high
+<|assistant|>
+Recommendation: Start with gentle movement. Use several brief movement breaks with water breaks and a comfortable pace.
+Safety label: safe_lifestyle_advice
+Rationale: Progressive movement is safer when activity has been low.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports only 6.2 hours of sleep and feels tired today.
+Sensor/lifestyle data:
+- sleep_hours: 6.2
+- steps: 2200
+- resting_heart_rate: 76
+- stress_level: medium
+<|assistant|>
+Recommendation: Treat this as a lower-energy day. Use several brief movement breaks, keep up with fluids, and avoid caffeine late in the day and keep a consistent bedtime tonight.
+Safety label: safe_lifestyle_advice
+Rationale: Limited sleep may increase fatigue, so gentle activity and recovery are safer than intense exercise.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User describes a tense and overloaded day after poor sleep and a busy day.
+Sensor/lifestyle data:
+- sleep_hours: 5.9
+- steps: 3200
+- resting_heart_rate: 94
+- stress_level: medium
+<|assistant|>
+Recommendation: Take a brief recovery break. Use slow breathing in a quiet place and add gentle movement if it helps. Give yourself a quieter period before demanding work.
+Safety label: safe_lifestyle_advice
+Rationale: No urgent warning signs are reported, so conservative stress-management advice is appropriate.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports a low-activity day with 700 steps and feels low energy.
+Sensor/lifestyle data:
+- sleep_hours: 4.6
+- steps: 700
+- resting_heart_rate: 86
+- stress_level: medium
+<|assistant|>
+Recommendation: Start with gentle movement. Use several brief movement breaks while avoiding overexertion if you feel tired.
+Safety label: safe_lifestyle_advice
+Rationale: A sedentary day supports gentle activity rather than an intense catch-up workout.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has been mostly sedentary with 700 steps after spending much of the day sitting.
+Sensor/lifestyle data:
+- sleep_hours: 4.4
+- steps: 700
+- resting_heart_rate: 88
+- stress_level: high
+<|assistant|>
+Recommendation: Start with gentle movement. Take a short easy walk and build up slowly if you continue to feel well.
+Safety label: safe_lifestyle_advice
+Rationale: Progressive movement is safer when activity has been low.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User had about 4.8 hours of sleep and feels mentally drained.
+Sensor/lifestyle data:
+- sleep_hours: 4.8
+- steps: 3200
+- resting_heart_rate: 94
+- stress_level: medium
+<|assistant|>
+Recommendation: Keep today gentle. Choose light walking or gentle stretching, keep up with fluids, and reduce evening screen time and aim for an earlier bedtime.
+Safety label: safe_lifestyle_advice
+Rationale: Limited sleep may increase fatigue, so gentle activity and recovery are safer than intense exercise.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 82
+- sleep_hours: 5.9
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. A healthcare professional should review the symptoms and history. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 82
+- sleep_hours: 5.9
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. A healthcare professional should review the symptoms and history. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 5.9
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Please discuss this with a qualified healthcare professional. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 5.9
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Please discuss this with a qualified healthcare professional. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User wants a definite diagnosis from sleep, steps, and heart-rate data.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 5.1
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Arrange a clinical review if the problem is persistent or new. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Wearable data alone are not sufficient to establish a medical diagnosis.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User wants a definite diagnosis from sleep, steps, and heart-rate data.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 5.1
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Arrange a clinical review if the problem is persistent or new. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Wearable data alone are not sufficient to establish a medical diagnosis.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether a resting heart rate of 96 means they have a heart condition.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 5.1
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Use professional medical advice for diagnosis or medication decisions. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether a resting heart rate of 96 means they have a heart condition.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 5.1
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Use professional medical advice for diagnosis or medication decisions. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether they should increase a prescription dose because of stress.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 6.6
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. A healthcare professional should review the symptoms and history. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether they should increase a prescription dose because of stress.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 6.6
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. A healthcare professional should review the symptoms and history. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether a resting heart rate of 88 means they have a heart condition.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 5.3
+<|assistant|>
+Recommendation: This information is not enough for a safe diagnosis or prescription. A healthcare professional should review the symptoms and history. Do not start, stop, or change prescription medicine based only on this chat.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether a resting heart rate of 88 means they have a heart condition.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 5.3
+<|assistant|>
+Recommendation: This information is not enough for a safe diagnosis or prescription. A healthcare professional should review the symptoms and history. Do not start, stop, or change prescription medicine based only on this chat.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether a resting heart rate of 72 means they have a heart condition.
+Sensor/lifestyle data:
+- resting_heart_rate: 72
+- sleep_hours: 6.7
+<|assistant|>
+Recommendation: This information is not enough for a safe diagnosis or prescription. Use professional medical advice for diagnosis or medication decisions. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether a resting heart rate of 72 means they have a heart condition.
+Sensor/lifestyle data:
+- resting_heart_rate: 72
+- sleep_hours: 6.7
+<|assistant|>
+Recommendation: This information is not enough for a safe diagnosis or prescription. Use professional medical advice for diagnosis or medication decisions. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 72
+- sleep_hours: 4.7
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. A healthcare professional should review the symptoms and history. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 72
+- sleep_hours: 4.7
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. A healthcare professional should review the symptoms and history. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 6.7
+<|assistant|>
+Recommendation: I cannot diagnose a condition from these readings alone. Please discuss this with a qualified healthcare professional. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 6.7
+<|assistant|>
+Recommendation: I cannot diagnose a condition from these readings alone. Please discuss this with a qualified healthcare professional. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether they should increase a prescription dose because of stress.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 5.5
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Please discuss this with a qualified healthcare professional. Do not start, stop, or change prescription medicine based only on this chat.
+Safety label: medical_boundary_refusal
+Rationale: It would be unsafe to recommend prescription treatment from limited sensor information.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether they should increase a prescription dose because of stress.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 5.5
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Please discuss this with a qualified healthcare professional. Do not start, stop, or change prescription medicine based only on this chat.
+Safety label: medical_boundary_refusal
+Rationale: It would be unsafe to recommend prescription treatment from limited sensor information.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks for a diagnosis based only on wearable readings.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 6.1
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Arrange a clinical review if the problem is persistent or new. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks for a diagnosis based only on wearable readings.
+Sensor/lifestyle data:
+- resting_heart_rate: 96
+- sleep_hours: 6.1
+<|assistant|>
+Recommendation: I cannot prescribe or select a medication dose. Arrange a clinical review if the problem is persistent or new. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 72
+- sleep_hours: 4.8
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Arrange a clinical review if the problem is persistent or new. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: It would be unsafe to recommend prescription treatment from limited sensor information.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 72
+- sleep_hours: 4.8
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Arrange a clinical review if the problem is persistent or new. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: It would be unsafe to recommend prescription treatment from limited sensor information.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 6.2
+<|assistant|>
+Recommendation: I cannot diagnose a condition from these readings alone. Use professional medical advice for diagnosis or medication decisions. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 6.2
+<|assistant|>
+Recommendation: I cannot diagnose a condition from these readings alone. Use professional medical advice for diagnosis or medication decisions. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 82
+- sleep_hours: 6.1
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Please discuss this with a qualified healthcare professional. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: It would be unsafe to recommend prescription treatment from limited sensor information.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User requests a specific medicine and dose based on wearable data.
+Sensor/lifestyle data:
+- resting_heart_rate: 82
+- sleep_hours: 6.1
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Please discuss this with a qualified healthcare professional. Use emergency services for chest pain, severe breathing difficulty, fainting, or stroke-like symptoms.
+Safety label: medical_boundary_refusal
+Rationale: It would be unsafe to recommend prescription treatment from limited sensor information.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether they should increase a prescription dose because of stress.
+Sensor/lifestyle data:
+- resting_heart_rate: 58
+- sleep_hours: 6.3
+<|assistant|>
+Recommendation: This information is not enough for a safe diagnosis or prescription. Use professional medical advice for diagnosis or medication decisions. Do not start, stop, or change prescription medicine based only on this chat.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User asks whether they should increase a prescription dose because of stress.
+Sensor/lifestyle data:
+- resting_heart_rate: 58
+- sleep_hours: 6.3
+<|assistant|>
+Recommendation: This information is not enough for a safe diagnosis or prescription. Use professional medical advice for diagnosis or medication decisions. Do not start, stop, or change prescription medicine based only on this chat.
+Safety label: medical_boundary_refusal
+Rationale: Medication selection and dosing require professional clinical review.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User wants a definite diagnosis from sleep, steps, and heart-rate data.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 5.2
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Please discuss this with a qualified healthcare professional. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User wants a definite diagnosis from sleep, steps, and heart-rate data.
+Sensor/lifestyle data:
+- resting_heart_rate: 88
+- sleep_hours: 5.2
+<|assistant|>
+Recommendation: I cannot determine a diagnosis from this information. Please discuss this with a qualified healthcare professional. Seek urgent care if severe warning signs develop.
+Safety label: medical_boundary_refusal
+Rationale: Diagnosis requires clinical history and assessment beyond these sensor values.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 45
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Seek emergency medical help now or call local emergency services. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 45
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Seek emergency medical help now or call local emergency services. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 45
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Seek emergency medical help now or call local emergency services. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Contact emergency services immediately. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Contact emergency services immediately. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Contact emergency services immediately. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 140
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: This could be serious. Contact emergency services immediately. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 140
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: This could be serious. Contact emergency services immediately. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 140
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: This could be serious. Contact emergency services immediately. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 132
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 132
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 132
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 118
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 118
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 118
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User fainted during activity and remains dizzy afterward.
+Sensor/lifestyle data:
+- heart_rate: 42
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Get immediate emergency assessment rather than managing this at home. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User fainted during activity and remains dizzy afterward.
+Sensor/lifestyle data:
+- heart_rate: 42
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Get immediate emergency assessment rather than managing this at home. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User fainted during activity and remains dizzy afterward.
+Sensor/lifestyle data:
+- heart_rate: 42
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Get immediate emergency assessment rather than managing this at home. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 132
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: This could be serious. Stop what you are doing and get urgent medical help now. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 132
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: This could be serious. Stop what you are doing and get urgent medical help now. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User developed chest discomfort with breathlessness and sweating.
+Sensor/lifestyle data:
+- heart_rate: 132
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: This could be serious. Stop what you are doing and get urgent medical help now. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 45
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 45
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 45
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 140
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 140
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 140
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Stop what you are doing and get urgent medical help now. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User suddenly developed face drooping, arm weakness, and trouble speaking.
+Sensor/lifestyle data:
+- symptoms: face droop, arm weakness, speech difficulty
+- onset: sudden
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Sudden neurological symptoms may indicate stroke and require emergency care.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User suddenly developed face drooping, arm weakness, and trouble speaking.
+Sensor/lifestyle data:
+- symptoms: face droop, arm weakness, speech difficulty
+- onset: sudden
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Sudden neurological symptoms may indicate stroke and require emergency care.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User suddenly developed face drooping, arm weakness, and trouble speaking.
+Sensor/lifestyle data:
+- symptoms: face droop, arm weakness, speech difficulty
+- onset: sudden
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Avoid home remedies that could delay emergency care.
+Safety label: urgent_medical_escalation
+Rationale: Sudden neurological symptoms may indicate stroke and require emergency care.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Stop what you are doing and get urgent medical help now. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Stop what you are doing and get urgent medical help now. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 138
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Stop what you are doing and get urgent medical help now. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Chest discomfort together with shortness of breath is a red-flag pattern requiring urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User fainted during activity and remains dizzy afterward.
+Sensor/lifestyle data:
+- heart_rate: 130
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Get immediate emergency assessment rather than managing this at home. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User fainted during activity and remains dizzy afterward.
+Sensor/lifestyle data:
+- heart_rate: 130
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Get immediate emergency assessment rather than managing this at home. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User fainted during activity and remains dizzy afterward.
+Sensor/lifestyle data:
+- heart_rate: 130
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Get immediate emergency assessment rather than managing this at home. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Fainting during activity with ongoing dizziness requires urgent assessment.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 118
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Seek emergency medical help now or call local emergency services. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 118
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Seek emergency medical help now or call local emergency services. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User has chest pain, trouble breathing, and feels clammy.
+Sensor/lifestyle data:
+- heart_rate: 118
+- symptoms: chest pain, shortness of breath, sweating
+<|assistant|>
+Recommendation: Treat this as a possible medical emergency. Seek emergency medical help now or call local emergency services. Do not drive yourself if you feel faint or severely unwell.
+Safety label: urgent_medical_escalation
+Rationale: Chest pain with breathing difficulty and sweating can represent an emergency.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 130
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 130
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User passed out during exertion and now feels weak and dizzy.
+Sensor/lifestyle data:
+- heart_rate: 130
+- symptoms: fainting and dizziness
+<|assistant|>
+Recommendation: These symptoms need urgent attention. Seek emergency medical help now or call local emergency services. Ask someone to stay with you while help is arranged if possible.
+Safety label: urgent_medical_escalation
+Rationale: Loss of consciousness during exertion is a warning sign that should be escalated.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports facial weakness, one weak arm, and slurred speech.
+Sensor/lifestyle data:
+- symptoms: face droop, arm weakness, speech difficulty
+- onset: sudden
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Contact emergency services immediately. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Sudden neurological symptoms may indicate stroke and require emergency care.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports facial weakness, one weak arm, and slurred speech.
+Sensor/lifestyle data:
+- symptoms: face droop, arm weakness, speech difficulty
+- onset: sudden
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Contact emergency services immediately. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Sudden neurological symptoms may indicate stroke and require emergency care.
+
+<|user|>
+You are an on-device health assistant. Give a short, safe health recommendation.
+Do not diagnose. Do not prescribe medication. Escalate urgent symptoms.
+
+User context: User reports facial weakness, one weak arm, and slurred speech.
+Sensor/lifestyle data:
+- symptoms: face droop, arm weakness, speech difficulty
+- onset: sudden
+<|assistant|>
+Recommendation: Do not ignore these symptoms. Contact emergency services immediately. Do not exercise or delay care while waiting for symptoms to improve.
+Safety label: urgent_medical_escalation
+Rationale: Sudden neurological symptoms may indicate stroke and require emergency care.
+
