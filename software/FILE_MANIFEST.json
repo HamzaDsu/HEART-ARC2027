@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "path": "scripts/build_e3_challenge.py",
+      "sha256": "030aab38763ba6fc7c2ef6df674236d56259e7c40c926681685fcb658da92b26",
+      "size_bytes": 25242
+    },
+    {
+      "path": "scripts/evaluate_precompression_baseline.py",
+      "sha256": "f48cfb8d0611c133e38411f667bb5153dd871edbd7c3b4b760837fca9a00dc3b",
+      "size_bytes": 10725
+    },
+    {
+      "path": "scripts/evaluate_gguf_safety.py",
+      "sha256": "71d923187927edc1434b8530787f82ab5bc5a9835b56fc9a30c74b5a61fa9547",
+      "size_bytes": 12832
+    },
+    {
+      "path": "slurm/build_safety_imatrix_v4.slurm",
+      "sha256": "7ff8ca19f50cb24181b25bf4300acb399c165e5e155da12f10dc37f998eba28e",
+      "size_bytes": 1037
+    },
+    {
+      "path": "slurm/evaluate_gguf_v4.slurm",
+      "sha256": "f42eb1d309e9496654b1428d46e11532fe882f12be0528d5061c9d963bf2e21e",
+      "size_bytes": 2339
+    },
+    {
+      "path": "slurm/evaluate_gguf_e3.slurm",
+      "sha256": "41867ab6eb7e14bd3f112777f962fd977757e7d278a103d50a7c6abff7146464",
+      "size_bytes": 2326
+    },
+    {
+      "path": "results/e1_e2_e3_master_results.csv",
+      "sha256": "89ab072240dd1120859ecd4ce8384f45f20bfe99e180645d7eef8200854c14df",
+      "size_bytes": 797
+    },
+    {
+      "path": "data/health_coaching_e3.jsonl",
+      "sha256": "0cb4e44271affc6c38a46389622c99d846ef5d7d82c97a54c63322560f25a8bb",
+      "size_bytes": 101917
+    },
+    {
+      "path": "results/e3_contamination_audit.json",
+      "sha256": "8a7fce171d2934339dcb59365b18fb57df5ccc2f1d792243a2a682cf4675ae3c",
+      "size_bytes": 852
+    }
+  ],
+  "missing_source_paths": []
+}

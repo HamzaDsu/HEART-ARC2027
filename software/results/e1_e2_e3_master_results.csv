@@ -1,0 +1,13 @@
+benchmark,model,total,strict_correct,strict_accuracy_pct,urgent_correct,urgent_total,boundary_correct,boundary_total,invalid_labels
+Original_1000,Dense_FP16,1000,829,82.9,237,237,76,247,171
+Original_1000,Conservative_Pruned,1000,1000,100.0,237,237,247,247,0
+Original_1000,Lower30_Pruned,1000,962,96.2,237,237,209,247,38
+Original_1000,Q3KS_No_Imatrix,1000,306,30.6,237,237,0,247,694
+Original_1000,Q3KS_Uniform96,1000,819,81.9,237,237,66,247,181
+Original_1000,Q3KS_Safety,1000,813,81.3,237,237,64,247,187
+E3_90,Dense_FP16,90,73,81.11,29,30,15,30,13
+E3_90,Conservative_Pruned,90,81,90.0,29,30,22,30,3
+E3_90,Lower30_Pruned,90,79,87.78,29,30,20,30,4
+E3_90,Q3KS_No_Imatrix,90,29,32.22,27,30,0,30,59
+E3_90,Q3KS_Uniform96,90,62,68.89,27,30,9,30,23
+E3_90,Q3KS_Safety,90,59,65.56,28,30,8,30,28

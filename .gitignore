@@ -1,0 +1,56 @@
+# Python, environments, notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# ML model weights, optimizer state, and other large generated artifacts
+*.gguf
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.joblib
+*.npy
+*.npz
+*.bin
+
+# Secrets and credentials
+*.pem
+*.key
+*token*.json
+*credentials*.json
+secrets/
+private/
+
+# Runs, logs, and temporary build files
+logs/
+runs/
+outputs/
+checkpoints/
+__pypackages__/
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+
+# Reviewer files: never publish responses/keys before approved review
+**/human_response_review_*.csv
+**/human_reference_label_review_*.csv
+**/e3_reviewer_package.tar.gz
+
+# LaTeX compilation byproducts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.out
+*.toc
